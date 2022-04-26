@@ -1,9 +1,7 @@
 <script lang='ts'>
-  import Hero from './lib/Hero.svelte';
-  import Stat from './lib/Stat.svelte';
+  import Navbar from './lib/Navbar.svelte';
 </script>
 
 <main>
-  <Hero />
-  <Stat />
+  <Navbar />
 </main>
