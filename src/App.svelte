@@ -1,7 +1,9 @@
 <script lang='ts'>
-  import Navbar from './lib/Navbar.svelte';
+  import Drawer from './lib/Drawer.svelte';
 </script>
 
-<main>
-  <Navbar />
-</main>
+<Drawer>
+  <main class='p-6'>
+    Content
+  </main>
+</Drawer>
