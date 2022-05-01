@@ -1,4 +1,6 @@
-<script lang='ts' context='module'>
+<script lang='ts'>
+  import { currentWeatherData, dailyTemperatureForecast } from '../store.js';
+
   function inCelsius(temp: number) {
     return temp + '\xB0C';
   }
@@ -9,9 +11,9 @@
   <div class='stat flex justify-around items-center'>
     <div>
       <div class='stat-title font-bold'>Aktuell</div>
-      <div class='stat-value'>{inCelsius(25)}</div>
-      <div class='stat-desc text-primary'>Min: {inCelsius(17)}</div>
-      <div class='stat-desc text-warning'>Max: {inCelsius(27)}</div>
+      <div class='stat-value'>{inCelsius(currentWeatherData().temperature)}</div>
+      <div class='stat-desc text-primary'>Min: {inCelsius(dailyTemperatureForecast().high)}</div>
+      <div class='stat-desc text-warning'>Max: {inCelsius(dailyTemperatureForecast().low)}</div>
     </div>
     <div class='stat-figure text-secondary'>
       <div class='avatar'>
