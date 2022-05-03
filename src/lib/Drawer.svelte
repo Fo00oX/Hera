@@ -27,7 +27,7 @@
       </div>
     </div>
     <!-- Page content here -->
-    <div class='p-6'>
+    <div class='p-6 mb-auto'>
       <slot></slot>
     </div>
     <Footer />
@@ -38,8 +38,6 @@
       <!-- Sidebar content here -->
       <li><a>Sidebar Item 1</a></li>
       <li><a>Sidebar Item 2</a></li>
-
     </ul>
-
   </div>
 </div>
