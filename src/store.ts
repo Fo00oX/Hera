@@ -4,82 +4,78 @@ export const dailyTemperatureForecast = () => {
 
 export const currentWeatherData = (location: string) => {
   if (location === 'Vienna') {
-    return { location: location, temperature: 25, feelsLike: 24, humidity: 0.25, windSpeed: 34, condition: 'sunny' };
+    return { name: location, temperature: 25, feelsLike: 24, humidity: 0.25, windSpeed: 34, condition: 'sunny' };
   }
   return {};
 };
 export const weeklyWeatherForecast = (location: string) => {
   if (location === 'Vienna') {
-    return {
-      dateRange: {
-        start: "01.05.2022",
-        end: "07.05.2022",
-      },
-      0: {
+    return [
+      {
         weekday: 'monday',
-        location: location,
+        name: location,
         temperature: 25,
         feelsLike: 24,
         humidity: 0.25,
         windSpeed: 34,
-        condition: 'sunny',
+        condition: 'clear-day',
       },
-      1: {
+      {
         weekday: 'tuesday',
-        location: location,
+        name: location,
         temperature: 25,
         feelsLike: 24,
         humidity: 0.25,
         windSpeed: 34,
-        condition: 'sunny',
+        condition: 'overcast',
       },
-      2: {
+      {
         weekday: 'wednesday',
-        location: location,
+        name: location,
         temperature: 25,
         feelsLike: 24,
         humidity: 0.25,
         windSpeed: 34,
-        condition: 'sunny',
+        condition: 'overcast',
       },
-      3: {
-        weekday: 'thurday',
-        location: location,
+      {
+        weekday: 'thursday',
+        name: location,
         temperature: 25,
         feelsLike: 24,
         humidity: 0.25,
         windSpeed: 34,
-        condition: 'sunny',
+        condition: 'cloudy',
       },
-      4: {
+      {
         weekday: 'friday',
-        location: location,
+        name: location,
         temperature: 25,
         feelsLike: 24,
         humidity: 0.25,
         windSpeed: 34,
-        condition: 'sunny',
+        condition: 'cloudy',
       },
-      5: {
+      {
         weekday: 'saturday',
-        location: location,
+        name: location,
         temperature: 25,
         feelsLike: 24,
         humidity: 0.25,
         windSpeed: 34,
-        condition: 'sunny',
+        condition: 'overcast-day',
       },
-      6: {
+      {
         weekday: 'sunday',
-        location: location,
+        name: location,
         temperature: 25,
         feelsLike: 24,
         humidity: 0.25,
         windSpeed: 34,
-        condition: 'sunny',
+        condition: 'clear-day',
       },
-    };
+    ];
   }
-  return {};
+  return [];
 };
 
