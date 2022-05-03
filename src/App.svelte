@@ -7,20 +7,22 @@
 </script>
 
 <Drawer>
-  <section class='p-6'>
-    <SearchBar bind:value={$locationSearchTerm}></SearchBar>
+  <section class='flex flex-col gap-6'>
+    <article>
+      <SearchBar bind:value={$locationSearchTerm}></SearchBar>
+    </article>
+    <article>
+      <main class='flex flex-col space-y-4'>
+        {#if currentWeatherData($locationSearchTerm)}
+          <div>
+            <h1 class='text-4xl mb-2'>{currentWeatherData($locationSearchTerm).name}</h1>
+            <CurrentWeatherCard />
+          </div>
+          <article>
+            <WeeklyWeatherCards location={$locationSearchTerm} />
+          </article>
+        {/if}
+      </main>
+    </article>
   </section>
-  <main class='p-6'>
-    <section class='flex flex-col space-y-4'>
-      {#if currentWeatherData($locationSearchTerm)}
-        <article>
-          <h1 class='text-4xl mb-2'>{currentWeatherData($locationSearchTerm).name}</h1>
-          <CurrentWeatherCard />
-        </article>
-        <article>
-          <WeeklyWeatherCards location={$locationSearchTerm} />
-        </article>
-      {/if}
-    </section>
-  </main>
 </Drawer>

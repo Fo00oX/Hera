@@ -27,7 +27,9 @@
       </div>
     </div>
     <!-- Page content here -->
-    <slot></slot>
+    <div class='p-6'>
+      <slot></slot>
+    </div>
     <Footer />
   </div>
   <div class='drawer-side text-primary'>
