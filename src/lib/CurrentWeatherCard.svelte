@@ -1,7 +1,6 @@
 <script lang='ts' context='module'>
   import { currentWeatherData, dailyTemperatureForecast } from '../store.ts';
   import { inCelsius } from '../util/metrics.ts';
-
 </script>
 
 <div class='stats shadow w-full max-w-lg'>

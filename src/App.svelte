@@ -9,7 +9,7 @@
 <Drawer>
   <section class='flex flex-col gap-6'>
     <article>
-      <SearchBar bind:value={$locationSearchTerm}></SearchBar>
+      <SearchBar />
     </article>
     <article>
       <main class='flex flex-col space-y-4'>
@@ -18,9 +18,7 @@
             <h1 class='text-4xl mb-2'>{currentWeatherData($locationSearchTerm).name}</h1>
             <CurrentWeatherCard />
           </div>
-          <article>
-            <WeeklyWeatherCards location={$locationSearchTerm} />
-          </article>
+          <WeeklyWeatherCards location={$locationSearchTerm} />
         {/if}
       </main>
     </article>
