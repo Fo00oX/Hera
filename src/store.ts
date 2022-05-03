@@ -1,3 +1,5 @@
+import { derived, writable } from 'svelte/store';
+
 export const dailyTemperatureForecast = () => {
   return { high: 28, low: 17 };
 };
@@ -6,7 +8,7 @@ export const currentWeatherData = (location: string) => {
   if (location === 'Vienna') {
     return { name: location, temperature: 25, feelsLike: 24, humidity: 0.25, windSpeed: 34, condition: 'sunny' };
   }
-  return {};
+  return null;
 };
 export const weeklyWeatherForecast = (location: string) => {
   if (location === 'Vienna') {
@@ -79,3 +81,4 @@ export const weeklyWeatherForecast = (location: string) => {
   return [];
 };
 
+export const locationSearchTerm = writable();
