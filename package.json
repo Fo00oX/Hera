@@ -38,6 +38,7 @@
     "vitest": "^0.9.3"
   },
   "dependencies": {
-    "daisyui": "^2.13.6"
+    "daisyui": "^2.13.6",
+    "svelte-navigator": "^3.1.5"
   }
 }

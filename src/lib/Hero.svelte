@@ -7,7 +7,7 @@
           <span class='text-4xl font-bold'>Hello there! </span>
           <img src='weather/clear-day.svg' class='w-16'>
         </h1>
-        <p class='py-6'>Looking for the accurate weather data? Type
+        <p class='py-6'>Looking for accurate weather data? Type
           <span class='italic font-bold text-primary'>Vienna</span>
           into the searchbar to see the current weather and a 7-day forecast!</p>
       </div>

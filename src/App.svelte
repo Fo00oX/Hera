@@ -5,25 +5,31 @@
   import WeeklyWeatherCards from './lib/WeeklyWeatherCards.svelte';
   import SearchBar from './lib/SearchBar.svelte';
   import Hero from './lib/Hero.svelte';
+  import { Route } from 'svelte-navigator';
 </script>
 
 <Drawer>
-  <section class='flex flex-col gap-6'>
-    <article class='flex justify-center w-full'>
-      <SearchBar />
-    </article>
-    <article>
-      <main class='flex flex-col space-y-4'>
-        {#if currentWeatherData($locationSearchTerm)}
-          <div>
-            <h1 class='text-4xl mb-2'>{currentWeatherData($locationSearchTerm).name}</h1>
-            <CurrentWeatherCard />
-          </div>
-          <WeeklyWeatherCards location={$locationSearchTerm} />
+  <Route path='/'>
+    <section class='flex flex-col gap-6'>
+      <article class='flex justify-center w-full'>
+        <SearchBar />
+      </article>
+      <article>
+        <main class='flex flex-col space-y-4'>
+          {#if currentWeatherData($locationSearchTerm)}
+            <div>
+              <h1 class='text-4xl mb-2'>{currentWeatherData($locationSearchTerm).name}</h1>
+              <CurrentWeatherCard />
+            </div>
+            <WeeklyWeatherCards location={$locationSearchTerm} />
           {:else}
-          <Hero />
-        {/if}
-      </main>
-    </article>
-  </section>
+            <Hero />
+          {/if}
+        </main>
+      </article>
+    </section>
+  </Route>
+  <Route path='weatherStation'>
+    <div>Hello Weather Station!</div>
+  </Route>
 </Drawer>
