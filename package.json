@@ -10,7 +10,7 @@
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "lint": "eslint --fix --ignore-path .gitignore . --ext .js,.ts,.svelte",
+    "lint": "eslint --ignore-path .gitignore . --ext .js,.ts,.svelte",
     "format": "prettier --write --ignore-path .gitignore \"!package-lock.json\" --plugin-search-dir=. ./**/*.{json,css,js,ts,cjs,svelte}"
   },
   "devDependencies": {
