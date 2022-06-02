@@ -1,4 +1,4 @@
-import { derived, writable } from 'svelte/store';
+import { writable } from 'svelte/store';
 
 export const dailyTemperatureForecast = () => {
   return { high: 28, low: 17 };
@@ -81,4 +81,4 @@ export const weeklyWeatherForecast = (location: string) => {
   return [];
 };
 
-export const locationSearchTerm = writable();
+export const locationSearchTerm = writable("");
