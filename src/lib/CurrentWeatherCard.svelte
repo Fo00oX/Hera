@@ -9,8 +9,8 @@
     <div>
       <div class='stat-title font-bold'>Currently</div>
       <div class='stat-value'>{inCelsius(currentWeatherData("Vienna").temperature)}</div>
-      <div class='stat-desc text-warning'>High: {inCelsius(dailyTemperatureForecast().low)}</div>
-      <div class='stat-desc text-primary'>Low: {inCelsius(dailyTemperatureForecast().high)}</div>
+      <div class='stat-desc text-warning'>High: {inCelsius(dailyTemperatureForecast().high)}</div>
+      <div class='stat-desc text-primary'>Low: {inCelsius(dailyTemperatureForecast().low)}</div>
     </div>
     <div class='stat-figure text-secondary'>
       <div class='avatar'>
