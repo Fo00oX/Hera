@@ -15,7 +15,14 @@ interface CurrentWeather {
 
 export const currentWeatherData = (location: string): CurrentWeather => {
   if (location === 'Vienna') {
-    return { name: location, temperature: 25, feelsLike: 24, humidity: 0.25, windSpeed: 34, condition: 'sunny' };
+    return {
+      name: location,
+      temperature: 25,
+      feelsLike: 24,
+      humidity: 0.25,
+      windSpeed: 34,
+      condition: 'sunny',
+    };
   }
 };
 export const weeklyWeatherForecast = (location: string) => {
