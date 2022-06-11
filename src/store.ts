@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { derived, writable } from 'svelte/store';
 
 export const isAuthenticated = writable(false);
 export const user = writable({});
@@ -99,5 +99,18 @@ export const weeklyWeatherForecast = (location: string) => {
     ];
   }
 };
+
+export const apiData = writable([]);
+
+/** Data transformation.
+ For our use case, we only care about the drink names, not the other information.
+ Here, we'll create a derived store to hold the drink names.
+ **/
+export const weatherForecast = derived(apiData, ($apiData) => {
+  if ($apiData) {
+    return $apiData;
+  }
+  return [];
+});
 
 export const locationSearchTerm = writable('');

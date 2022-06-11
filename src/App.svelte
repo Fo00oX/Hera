@@ -4,33 +4,22 @@
   import WeatherStation from './routes/WeatherStation.svelte';
   import Home from './routes/Home.svelte';
   import { onMount } from 'svelte';
-  import auth from './services/authService';
-  import { isAuthenticated, user } from './store';
-
-  let auth0Client;
+  import { apiData } from './store';
 
   onMount(async () => {
-    console.log("onMount");
-    // const res = await fetch(`http://localhost:8080/weather/vienna`, {mode: 'no-cors'});
-    // console.log("res", res);
-    auth0Client = await auth.createClient();
-
-    isAuthenticated.set(await auth0Client.isAuthenticated());
-    user.set(await auth0Client.getUser());
+    fetch(`http://localhost:8080/weather/vienna`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        apiData.set(data);
+      }).catch(error => {
+      console.log(error);
+      return [];
+    });
   });
-
-  function login() {
-    console.log('logging in');
-    auth.loginWithPopup(auth0Client);
-  }
-
-  function logout() {
-    auth.logout(auth0Client);
-  }
 </script>
 
 <Drawer>
-  <Route path='/' component={Home} />
-  <Route path='weatherStation' component={WeatherStation} />
-  <button on:click={login}>Login</button>
+  <Route path='/' component={ Home } />
+  <Route path='weatherStation' component={ WeatherStation } />
 </Drawer>
