@@ -1,6 +1,7 @@
 <script>
   import Footer from './Footer.svelte';
   import { Link, Router } from 'svelte-navigator';
+  import RegisterModul from './Modal.svelte';
 </script>
 
 <Router>
@@ -24,6 +25,9 @@
           <ul class='menu menu-horizontal'>
             <!-- Navbar menu content here -->
             <Link to='/weatherStation' class='btn btn-ghost rounded-lg normal-case'>Weather Station</Link>
+            <Link to='/auth/register' class='btn btn-ghost rounded-lg normal-case'>Register</Link>
+            <Link to='/auth/login' class='btn btn-ghost rounded-lg normal-case'>Login</Link>
+
           </ul>
         </div>
       </div>
@@ -38,6 +42,8 @@
       <ul class='menu p-4 overflow-y-auto w-80 bg-base-100'>
         <!-- Sidebar content here -->
         <Link to='/weatherStation' class='btn btn-ghost rounded-lg normal-case'>Weather Station</Link>
+        <Link to='/auth/register' class='btn btn-ghost rounded-lg normal-case'>Register</Link>
+        <Link to='/auth/login' class='btn btn-ghost rounded-lg normal-case'>Login</Link>
       </ul>
     </div>
   </div>
