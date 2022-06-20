@@ -10,4 +10,4 @@
   };
 </script>
 
-<button class='btn btn-primary text-white' on:click={clicked}>{text}</button>
+<button class='btn btn-primary text-white' type='submit' on:click={clicked}>{text}</button>

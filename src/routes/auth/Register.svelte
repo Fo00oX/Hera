@@ -3,8 +3,8 @@
   import PasswordInput from '../../lib/inputs/PasswordInput.svelte';
   import Button from '../../lib/Button.svelte';
 
-  let email = 'hallo';
-  let password = 'letmein';
+  let email;
+  let password;
   let result = null;
   let text = 'register';
 
@@ -29,6 +29,26 @@
 </script>
 
 <h1>Register here 🎉</h1>
-<EmailInput />
-<PasswordInput />
-<Button bind:text={text} on:clicked={register} />
+<form on:submit|preventDefault={register}>
+  <div class='form-control'>
+    <label class='label'>
+      <span class='label-text'>Your Email</span>
+    </label>
+    <label class='input-group'>
+      <span>Email</span>
+      <input type='email' placeholder='info@site.com' class='input input-bordered' bind:value={email} />
+    </label>
+  </div>
+
+  <div class='form-control'>
+    <label class='label'>
+      <span class='label-text'>Your Password</span>
+    </label>
+    <label class='input-group'>
+      <span>Password</span>
+      <input type='password' placeholder='IloveWeb' class='input input-bordered' bind:value={password} />
+    </label>
+  </div>
+
+  <button class='btn btn-primary text-white' type='submit'>register</button>
+</form>
