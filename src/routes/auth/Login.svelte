@@ -1,7 +1,12 @@
 <script>
+  import EmailInput from '../../lib/inputs/EmailInput.svelte';
+  import PasswordInput from '../../lib/inputs/PasswordInput.svelte';
+  import Button from '../../lib/Button.svelte';
+
   let email = 'hallo';
   let password = 'letmein';
   let result = null;
+  let text = 'login';
 
   async function login() {
     const res = await fetch('http://localhost:8080/auth/login', {
@@ -23,4 +28,6 @@
 </script>
 
 <h1>Login here 🎉</h1>
-<button on:click={login}>Login</button>
+<EmailInput />
+<PasswordInput />
+<Button bind:text={text} on:clicked={login} />

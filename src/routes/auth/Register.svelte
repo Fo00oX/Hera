@@ -1,7 +1,12 @@
 <script>
+  import EmailInput from '../../lib/inputs/EmailInput.svelte';
+  import PasswordInput from '../../lib/inputs/PasswordInput.svelte';
+  import Button from '../../lib/Button.svelte';
+
   let email = 'hallo';
   let password = 'letmein';
   let result = null;
+  let text = 'register';
 
   async function register() {
     const res = await fetch('http://localhost:8080/auth/register', {
@@ -24,4 +29,6 @@
 </script>
 
 <h1>Register here 🎉</h1>
-<button on:click={register}>Register</button>
+<EmailInput />
+<PasswordInput />
+<Button bind:text={text} on:clicked={register} />
