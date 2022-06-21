@@ -8,6 +8,12 @@
   let result = null;
   let text = 'register';
 
+  async function setId(res) {
+    const json = await res.json();
+    const id = json.id;
+    localStorage.setItem('Id', id);
+  }
+
   async function register() {
     const res = await fetch('http://localhost:8080/auth/register', {
       method: 'POST',
@@ -21,9 +27,7 @@
       },
     });
 
-    const json = await res.json();
-    result = JSON.stringify(json);
-    console.log(result);
+    await setId(res);
   }
 
 </script>

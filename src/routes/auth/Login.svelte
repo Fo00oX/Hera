@@ -2,18 +2,20 @@
 
   let email;
   let password;
-  let response = null;
   let text = 'login';
-  let token;
 
   async function setToken(res) {
     const json = await res.json();
-    response = JSON.stringify(json);
-    const token = response.substring(10, response.length - 2);
+    const token = json.token;
+    console.log(token);
+    // const response = JSON.stringify(json);
+    // const token = response.substring(10, response.length - 2);
     localStorage.setItem('Token', token);
   }
 
   async function login() {
+    console.log(email);
+    console.log(password);
     const res = await fetch('http://localhost:8080/auth/login', {
       method: 'POST',
       body: JSON.stringify({
@@ -25,9 +27,9 @@
         'Content-Type': 'application/json',
       },
     });
-    localStorage.getItem('Token').length > 0
-      ? localStorage.getItem('Token')
-      : await setToken(res);
+    if (!localStorage.getItem('Token')) {
+      await setToken(res);
+    }
   }
 
 </script>
