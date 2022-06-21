@@ -11,7 +11,7 @@
 <section class='flex flex-col gap-6'>
   <article class='flex justify-center w-full'>
     <SearchBar />
-    <button on:click={() => {isSearchClicked = true;loadWeather($locationSearchTerm)}}>
+    <button class='btn btn-primary text-white' on:click={() => {isSearchClicked = true;loadWeather($locationSearchTerm)}}>
       suche
     </button>
   </article>
