@@ -27,6 +27,7 @@
             <Link to='/weatherStation' class='btn btn-ghost rounded-lg normal-case'>Weather Station</Link>
             <Link to='/auth/register' class='btn btn-ghost rounded-lg normal-case'>Register</Link>
             <Link to='/auth/login' class='btn btn-ghost rounded-lg normal-case'>Login</Link>
+            <Link to='/auth/settings' class='btn btn-ghost rounded-lg normal-case'>Settings</Link>
 
           </ul>
         </div>
@@ -44,6 +45,7 @@
         <Link to='/weatherStation' class='btn btn-ghost rounded-lg normal-case'>Weather Station</Link>
         <Link to='/auth/register' class='btn btn-ghost rounded-lg normal-case'>Register</Link>
         <Link to='/auth/login' class='btn btn-ghost rounded-lg normal-case'>Login</Link>
+        <Link to='/auth/settings' class='btn btn-ghost rounded-lg normal-case'>Settings</Link>
       </ul>
     </div>
   </div>
