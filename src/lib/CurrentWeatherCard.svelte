@@ -1,5 +1,5 @@
 <script lang='ts' context='module'>
-  import { currentWeatherData, dailyTemperatureForecast } from '../store.ts';
+  import { currentWeather, dailyTemperatureForecast } from '../store.ts';
   import { inCelsius } from '../util/metrics.ts';
 </script>
 
@@ -8,9 +8,9 @@
   <div class='stat flex justify-around items-center'>
     <div>
       <div class='stat-title font-bold'>Currently</div>
-      <div class='stat-value'>{inCelsius(currentWeatherData("Vienna").temperature)}</div>
-      <div class='stat-desc text-warning'>High: {inCelsius(dailyTemperatureForecast().high)}</div>
-      <div class='stat-desc text-primary'>Low: {inCelsius(dailyTemperatureForecast().low)}</div>
+      <div class='stat-value'>{inCelsius($currentWeather.temp)}</div>
+      <div class='stat-desc text-warning'>High: {inCelsius($currentWeather.temp_max)}</div>
+      <div class='stat-desc text-primary'>Low: {inCelsius($currentWeather.temp_min)}</div>
     </div>
     <div class='stat-figure text-secondary'>
       <div class='avatar'>
