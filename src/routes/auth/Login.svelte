@@ -25,11 +25,9 @@
         'Content-Type': 'application/json',
       },
     });
-    token = localStorage.getItem('Token').length > 0
+    localStorage.getItem('Token').length > 0
       ? localStorage.getItem('Token')
       : await setToken(res);
-
-    console.log('Token is set:', token);
   }
 
 </script>
