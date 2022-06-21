@@ -1,6 +1,6 @@
 <script lang='ts'>
 
-  let email: string;
+  let nickname: string;
 
   const deleteUser = async () => {
     try {
@@ -13,21 +13,22 @@
       console.log('removed');
       console.log(res);
       sessionStorage.removeItem('Id');
+      sessionStorage.removeItem('Token');
     } catch (e) {
       console.log(e);
     }
   };
 
-  const updateEmail = async () => {
+  const updateNickname = async () => {
     try {
-      fetch(`http://localhost:8080/auth/update/${sessionStorage.getItem('Id')}`, {
+      await fetch(`http://localhost:8080/auth/update/${sessionStorage.getItem('Id')}`, {
         method: 'PUT',
-        body: email,
+        body: nickname,
         headers: {
           'Content-Type': 'text/plain',
         },
       });
-      console.log('updated email');
+      console.log('updated nickname');
     } catch (e) {
       console.log(e);
     }
@@ -38,15 +39,15 @@
 
 <button on:click={deleteUser}>Delete me</button>
 
-<form on:submit|preventDefault={updateEmail}>
+<form on:submit|preventDefault={updateNickname}>
   <div class='form-control'>
     <label class='label'>
-      <span class='label-text'>New Email</span>
+      <span class='label-text'>New Nickname</span>
     </label>
     <label class='input-group'>
-      <span>Email</span>
-      <input type='email' placeholder='info@site.com' class='input input-bordered' bind:value={email} />
+      <span>Nickname</span>
+      <input type='text' placeholder='yourNickname' class='input input-bordered' bind:value={nickname} />
     </label>
   </div>
-  <button class='btn btn-primary text-white' type='submit'>Update Email</button>
+  <button class='btn btn-primary text-white' type='submit'>Update Nickname</button>
 </form>

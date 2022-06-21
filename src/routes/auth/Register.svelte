@@ -5,6 +5,7 @@
 
   let email;
   let password;
+  let nickname;
   let result = null;
   let text = 'register';
 
@@ -20,6 +21,7 @@
       body: JSON.stringify({
           email,
           password,
+          nickname,
         },
       ),
       headers: {
@@ -34,6 +36,16 @@
 
 <h1>Register here 🎉</h1>
 <form on:submit|preventDefault={register}>
+  <div class='form-control'>
+    <label class='label'>
+      <span class='label-text'>Your Nickname</span>
+    </label>
+    <label class='input-group'>
+      <span>Nickname</span>
+      <input type='text' placeholder='yourNickname' class='input input-bordered' bind:value={nickname} />
+    </label>
+  </div>
+
   <div class='form-control'>
     <label class='label'>
       <span class='label-text'>Your Email</span>
