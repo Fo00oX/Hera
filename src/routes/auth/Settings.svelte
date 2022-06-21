@@ -36,7 +36,7 @@
 
 </script>
 
-<button on:click={deleteUser}>Delete me</button>
+<button on:click={deleteUser} class="btn btn-outline btn-error">Delete me</button>
 
 <form on:submit|preventDefault={updateEmail}>
   <div class='form-control'>
