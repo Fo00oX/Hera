@@ -1,9 +1,8 @@
 <script lang='ts'>
   import SearchBar from '../lib/SearchBar.svelte';
-  import { currentWeather, loadWeather, locationSearchTerm } from '../store.ts';
   import CurrentWeatherCard from '../lib/CurrentWeatherCard.svelte';
   import Hero from '../lib/Hero.svelte';
-  import { onMount } from 'svelte';
+  import { currentWeather, loadWeather, locationSearchTerm } from '../store.ts';
 
   let isSearchClicked = false;
 </script>
