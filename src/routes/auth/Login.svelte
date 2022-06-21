@@ -1,12 +1,17 @@
 <script>
-  import EmailInput from '../../lib/inputs/EmailInput.svelte';
-  import PasswordInput from '../../lib/inputs/PasswordInput.svelte';
-  import Button from '../../lib/Button.svelte';
 
   let email;
   let password;
-  let result = null;
+  let response = null;
   let text = 'login';
+  let token;
+
+  async function setToken(res) {
+    const json = await res.json();
+    response = JSON.stringify(json);
+    const token = response.substring(10, response.length - 2);
+    localStorage.setItem('Token', token);
+  }
 
   async function login() {
     const res = await fetch('http://localhost:8080/auth/login', {
@@ -20,12 +25,11 @@
         'Content-Type': 'application/json',
       },
     });
-    console.log("Test")
-    const json = await res.json()
-    result= JSON.stringify(json)
-    console.log(result);
-    localStorage.setItem('Token', result);
-    console.log(localStorage.getItem('Token'));
+    token = localStorage.getItem('Token').length > 0
+      ? localStorage.getItem('Token')
+      : await setToken(res);
+
+    console.log('Token is set:', token);
   }
 
 </script>
