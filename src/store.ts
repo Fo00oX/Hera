@@ -33,7 +33,7 @@ export async function loadWeather (location: string): Promise<void>{
         try {
             const response = await fetch(`http://localhost:8080/public/weather/current/${location}`, {
                 headers: {
-                    Authorization: `Bearer ${token}`,
+                    Authorization: `Bearer ${localStorage.getItem('Token')}`,
                     'Content-Type': 'application/json',
                 }
             })

@@ -20,9 +20,12 @@
         'Content-Type': 'application/json',
       },
     });
-
-    result = await res;
+    console.log("Test")
+    const json = await res.json()
+    result= JSON.stringify(json)
     console.log(result);
+    localStorage.setItem('Token', result);
+    console.log(localStorage.getItem('Token'));
   }
 
 </script>
