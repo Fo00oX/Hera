@@ -5,18 +5,19 @@
     import Hero from '../lib/Hero.svelte';
     import SearchButton from "../lib/SearchButton.svelte";
 
+    let isSearchClicked = false
 </script>
 
 <section class='flex flex-col gap-6'>
     <article class='flex justify-center w-full'>
         <SearchBar/>
-        <button on:click={(e) => loadWeather($locationSearchTerm)}>
+        <button on:click={() => {isSearchClicked = true;loadWeather($locationSearchTerm)}}>
             suche
         </button>
     </article>
     <article>
         <main class='flex flex-col space-y-4'>
-            {#if $currentWeather}
+            {#if isSearchClicked}
                 <div>
                     <h1 class='text-4xl mb-2'>{$currentWeather.responseLocation}</h1>
                     <CurrentWeatherCard/>

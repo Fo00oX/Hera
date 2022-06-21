@@ -1,5 +1,5 @@
 <script lang='ts' context='module'>
-  import { currentWeather, dailyTemperatureForecast } from '../store.ts';
+  import { currentWeather } from '../store.ts';
   import { inCelsius } from '../util/metrics.ts';
 </script>
 

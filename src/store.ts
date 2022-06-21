@@ -16,10 +16,6 @@ const currentWeatherStab: CurrentWeather = {
 export const currentWeather = writable(currentWeatherStab)
 const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1ZG9uQHRlc3QuYXQiLCJpYXQiOjE2NTU2NDU0ODYsImV4cCI6MTY1NjI1MDI4Nn0.1f-o9kPD-8Tj2YMNj3AHBANqsCSjH5OnyCoYv_G4zusNwHOme4mHiYG7cpSgI803pV2843zz7qFCauxKxn0HdA"
 
-export const dailyTemperatureForecast = () => {
-    return {high: 28, low: 17};
-};
-
 interface CurrentWeather {
     responseLocation: string;
     description: string;
@@ -50,75 +46,6 @@ export async function loadWeather (location: string): Promise<void>{
 
     await get()
 }
-export const weeklyWeatherForecast = (location: string) => {
-    if (location === 'Vienna') {
-        return [
-            {
-                weekday: 'friday',
-                name: location,
-                temperature: 25,
-                feelsLike: 24,
-                humidity: 0.25,
-                windSpeed: 34,
-                condition: 'cloudy',
-            },
-            {
-                weekday: 'saturday',
-                name: location,
-                temperature: 25,
-                feelsLike: 24,
-                humidity: 0.25,
-                windSpeed: 34,
-                condition: 'overcast-day',
-            },
-            {
-                weekday: 'sunday',
-                name: location,
-                temperature: 25,
-                feelsLike: 24,
-                humidity: 0.25,
-                windSpeed: 34,
-                condition: 'clear-day',
-            },
-            {
-                weekday: 'monday',
-                name: location,
-                temperature: 25,
-                feelsLike: 24,
-                humidity: 0.25,
-                windSpeed: 34,
-                condition: 'clear-day',
-            },
-            {
-                weekday: 'tuesday',
-                name: location,
-                temperature: 25,
-                feelsLike: 24,
-                humidity: 0.25,
-                windSpeed: 34,
-                condition: 'overcast',
-            },
-            {
-                weekday: 'wednesday',
-                name: location,
-                temperature: 25,
-                feelsLike: 24,
-                humidity: 0.25,
-                windSpeed: 34,
-                condition: 'overcast',
-            },
-            {
-                weekday: 'thursday',
-                name: location,
-                temperature: 25,
-                feelsLike: 24,
-                humidity: 0.25,
-                windSpeed: 34,
-                condition: 'cloudy',
-            },
-        ];
-    }
-};
 
 export const apiData = writable([]);
 
