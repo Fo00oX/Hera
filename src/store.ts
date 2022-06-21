@@ -34,7 +34,7 @@ export async function loadWeather(location: string): Promise<void> {
     try {
       const response = await fetch(`http://localhost:8080/public/weather/current/${location}`, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('Token')}`,
+          Authorization: `Bearer ${sessionStorage.getItem('Token')}`,
           'Content-Type': 'application/json',
         },
       });
@@ -56,7 +56,7 @@ export async function loadPrivateWeather(location: string): Promise<void> {
     try {
       const response = await fetch(`http://localhost:8080/private/weather/current/${location}`, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('Token')}`,
+          Authorization: `Bearer ${sessionStorage.getItem('Token')}`,
           'Content-Type': 'application/json',
         },
       });

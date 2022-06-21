@@ -10,7 +10,7 @@
     console.log(token);
     // const response = JSON.stringify(json);
     // const token = response.substring(10, response.length - 2);
-    localStorage.setItem('Token', token);
+    sessionStorage.setItem('Token', token);
   }
 
   async function login() {
@@ -27,7 +27,7 @@
         'Content-Type': 'application/json',
       },
     });
-    if (!localStorage.getItem('Token')) {
+    if (!sessionStorage.getItem('Token')) {
       await setToken(res);
     }
   }

@@ -4,7 +4,7 @@
 
   const deleteUser = async () => {
     try {
-      const res = await fetch(`http://localhost:8080/auth/delete/${localStorage.getItem('Id')}`, {
+      const res = await fetch(`http://localhost:8080/auth/delete/${sessionStorage.getItem('Id')}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'text/plain',
@@ -12,7 +12,7 @@
       });
       console.log('removed');
       console.log(res);
-      localStorage.removeItem('Id');
+      sessionStorage.removeItem('Id');
     } catch (e) {
       console.log(e);
     }
@@ -20,14 +20,14 @@
 
   const updateEmail = async () => {
     try {
-      const res = await fetch(`http://localhost:8080/auth/update/${localStorage.getItem('Id')}`, {
+      fetch(`http://localhost:8080/auth/update/${sessionStorage.getItem('Id')}`, {
         method: 'PUT',
+        body: email,
         headers: {
           'Content-Type': 'text/plain',
         },
       });
       console.log('updated email');
-      console.log(res);
     } catch (e) {
       console.log(e);
     }

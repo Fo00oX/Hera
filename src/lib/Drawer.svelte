@@ -24,10 +24,18 @@
         <div class='flex-none hidden lg:block text-white'>
           <ul class='menu menu-horizontal'>
             <!-- Navbar menu content here -->
-            <Link to='/weatherStation' class='btn btn-ghost rounded-lg normal-case'>Weather Station</Link>
-            <Link to='/auth/register' class='btn btn-ghost rounded-lg normal-case'>Register</Link>
-            <Link to='/auth/login' class='btn btn-ghost rounded-lg normal-case'>Login</Link>
-            <Link to='/auth/settings' class='btn btn-ghost rounded-lg normal-case'>Settings</Link>
+            <li>
+              <Link to='/weatherStation' class='btn btn-ghost rounded-lg normal-case'>Weather Station</Link>
+            </li>
+            <li>
+              <Link to='/auth/register' class='btn btn-ghost rounded-lg normal-case'>Register</Link>
+            </li>
+            <li>
+              <Link to='/auth/login' class='btn btn-ghost rounded-lg normal-case'>Login</Link>
+            </li>
+            <li>
+              <Link to='/auth/settings' class='btn btn-ghost rounded-lg normal-case'>Settings</Link>
+            </li>
 
           </ul>
         </div>
