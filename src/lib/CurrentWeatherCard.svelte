@@ -15,7 +15,7 @@
     <div class='stat-figure text-secondary'>
       <div class='avatar'>
         <div class='w-32 rounded-full'>
-          <img src='weather/clear-day.svg' />
+          <img src="weather/clear-day.svg"/>
         </div>
       </div>
     </div>
